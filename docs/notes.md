@@ -1,148 +1,316 @@
-<!-- .slide: data-background="#500000" class="dark" -->
+<!-- .slide: data-background="#ffffff" class="dark" -->
 
-# Bi-Weekly Notes
+## A Modal Approach to the Dynamics of Human Affect 
 
-## More on OMA and DEAP
+### T. Griffith
+Preliminary Examination
 
-
-
-2020-04-15
+May 20, 2021
 
 ---
 
-<!-- .slide: data-background="#767171" class="dark" -->
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-## Last Time:
-
-- Looked at different output only state space algorithms
-- How to get a single model for cognitive state?
-    - Average the eigenvectors reconstruct A
-    - Average A and determine the eigenvectors
-
-<img src="img/T5avg.png" alt="Trial 5, Averaged" style="width:500px;"> 
-
+## 1. Motivation
+## 2. Approach
+## 3. Timeline
 
 
 ---
 
-<!-- .slide: data-background="#767171" class="dark" -->
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-## Average the Eigenvectors:
-- Reconstruct the A matrix from averaged eigenvectors
-- L.I. eigenvectors, but no guarantee of orthogonality or SA
+## 1. Motivation
 
-<img src="img/T36comps.png" alt="Trial 36, stats" style="width:1500px;">
+---
 
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Robots that work with humans are increasingly prevalent
+
+<img src="img/factory.jpg" alt="Trial 5, Averaged" width="32%">
+<img src="img/hospital.jpg" alt="Trial 5, Averaged" width="32%">
+<img src="img/army.jpg" alt="Trial 5, Averaged" width="32%">
+
+<div style="text-align: right"> <sub><sub><sup><a href="https://www.wired.co.uk/article/robots-in-the-workplace">Spencer Lowell</a>, Wired, 2021</sup></sup></sub></div>
+<div style="text-align: right"> <sub><sub><sup><a href="https://www.army.mil/article/240584/army_conducts_major_milestone_tests_in_development_of_next_gen_fighting_system">Bridgett Siter</a>, Army, 2020</sup></sup></sub></div>
 
 
 ---
 
-<!-- .slide: data-background="#767171" class="dark" -->
+## Shared flow of information is implied
 
-## Average the A:
-- Recalculate eigenvectors after averaging the A matrix
-- L.I. eigenvectors, but again no guarantee of orthogonality or SA
+<img class="plain" src="img/arl-shared.png" alt="Trial 5, Averaged" width="60%">
 
-<img src="img/T36avgofA.png" alt="Trial 36, A average" style="width:800px;">
 
+<div style="text-align: right"> <sub><sub><sub><sub><sup>Barnes, Michael J., Jessie Y. Chen, and Susan Hill. Humans and autonomy: Implications of shared decision making for military operations. US Army Research Laboratory Aberdeen Proving Ground United States, 2017.</sup></sup></sup></sup></sub></div>
 
 
 ---
 
-<!-- .slide: data-background="#767171" class="dark" -->
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-## What if we force SA?:
-- Recalculate eigenvectors after averaging the A matrix and forcing SA
-- L.I., orthogonal eigenvectors for distinct eigenvalues
-- Tricky C matrix
+## Not just performance
 
-<img src="img/T36hermofA.png" alt="Trial 36, A average" style="width:700px;">
-<img src="img/T16hermofA.png" alt="Trial 36, A average" style="width:700px;">
+- Automation conundrum
+- When SA is lost, [bad](https://dspace.mit.edu/handle/1721.1/70967) [things](https://sanfrancisco.cbslocal.com/2021/05/14/tesla-fatal-california-crash-fontana-was-on-autopilot-chp-says/) [happen](https://features.propublica.org/navy-uss-mccain-crash/navy-installed-touch-screen-steering-ten-sailors-paid-with-their-lives/)
 
+![Image of Yaktocat](img/mccain.jpg)
 
-
----
-
-<!-- .slide: data-background="#767171" class="dark" -->
-
-## What have we learned:
-- OMA-data seems to be the most consistent across the data set
-- If we postulate that pure emotions should be standing waves, SA transform is promising
-    - Need to track the norm of the lost components somehow
-    - But, need to understand why eigenvectors don't stay complex
-        - SA does not restrict this
-- It's too difficult for a human to look at these and learn anything
 
 
 
 ---
 
-<!-- .slide: data-background="#767171" class="dark" -->
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-## Heatmaps for ML:
-- A given complex mode:
-    - $\phi_1=[1, -0.8, 0.4-0.3i, -1, 0.7+0.1i]$
-- Represent complex mode as a heatmap:
-
-<p align="center">
-  <img src="img/test_hmap.png" alt="Trial 36, A average" style="width:600px;">
-</p>
-
----
-
-<!-- .slide: data-background="#767171" class="dark" -->
-
-## Look at All Eigenvectors:
-
-- Both for hermitian and non-hermitian case
-- Hermitian is non-complex, but more modes
-- non-Hermitian is complex, but fewer modes
+###  Need descriptions of human cognition and decision making as it is relevant to the ***dynamics*** of human-robot interaction.
 
 
-<p align="center">
-  <img src="img/T37avgofA_heat.png" alt="Trial 36, A average" style="width:700px;">
-  <img src="img/T37hermofA_heat.png" alt="Trial 36, A average" style="width:700px;">
-</p>
+- Rigorous
+- Dynamic
+- Transparent
+- Non-invasive
+- Physiological
 
 ---
 
-<!-- .slide: data-background="#767171" class="dark" -->
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-
-## Heatmaps for ML:
-- Ask computer to distinguish images:
-
-<p align="center">
-  <img src="img/ml_heat1.png" alt="Trial 36, A average" style="width:700px;">
-  <img src="img/ml_heat2.png" alt="Trial 36, A average" style="width:700px;">
-</p>
+##  How is it done now?
+<img class="plain" src="img/sota.jpg" alt="Trial 5, Averaged" width="60%">
 
 ---
 
-<!-- .slide: data-background="#767171" class="dark" -->
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-
-## Consider all channels:
-- Early work with [Bruel & Kjaer](https://www.bksv.com/en/products/Analysis-software/structural-dynamics-software/modal-measurements-and-analysis/operational-modal-analysis-8760-8761-8762)
-- Treat all channels as a flat plate, look for modes
-
-<p align="center">
-  <img src="img/bruel.png" alt="Trial 36, A average" style="width:1000px;">
-</p>
+##  How is it done now?
+<img class="plain" src="img/bar_rev.png" alt="Trial 5, Averaged" width="60%">
 
 ---
 
-<!-- .slide: data-background="#767171" class="dark" -->
 
-## What have we learned 2.0:
-- Loosing too much information in the self-adjoint transform
-    - Need least squares
-    - Need to be able to transform C matrix also
-- ML heatmap analysis may suggest the best algorithm/representation
-  - First pass is an improvement over time series, but still not useful
-- Early work with all channels is promising. 
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-- All plots [here](https://drive.google.com/drive/folders/1vuMJPsxFmVqm2SRdVpqBoa8_NeZ_Jn9Y?usp=sharing)
+## 2. Approach
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Key Components of the Approach
+<img class="plain" src="img/features2.jpg" alt="Trial 5, Averaged" width="60%">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+## 1. EEG is the measure of choice
+
+- Lots of existing knowledge
+- Widely avaliable
+- Implementation
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+## 2. System Identification
+<img class="plain" src="img/oma.png" alt="Trial 5, Averaged" width="60%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+## 3. State space
+$x(k+1)=Ax(k)+Bu(k)$
+
+$y(k)=Cx(k)$ 
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+## 4. Modal decomposition
+$A=W \Lambda V$
+
+$A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lambda_1 & \ldots & 0 \\\ \vdots & \ddots & \vdots \\\ 0 & \ldots & \lambda_n \end{bmatrix} \begin{bmatrix} v_1^T \\\ v_2^T \\\ \vdots \\\ v_n^T \end{bmatrix}$ 
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Modeling Overview
+<img class="plain" src="img/overview.png" alt="Trial 5, Averaged" width="20%">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+<img class="plain" src="img/journal.png" alt="Trial 5, Averaged" width="80%">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Eigenvectors are Traveling and Standing
+<section>
+<img class="plain" src="img/animode.gif" alt="Trial 5, Averaged" style="height:600px;">
+<img class="plain" src="img/compass.jpg" alt="Trial 5, Averaged" style="height:600px;">
+</section>
+
+<section>
+<img class="plain" src="img/animode2.gif" alt="Trial 5, Averaged" style="height:600px;">
+<img class="plain" src="img/compass2.jpg" alt="Trial 5, Averaged" style="height:600px;">
+</section>
+
+<section>
+
+<img class="plain" src="img/eigenvectors.jpg" alt="Trial 5, Averaged" style="height:600px;">
+
+</section>
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+
+## Eigenmodes are Physically Significant
+<img class="plain" src="img/oma1.gif" alt="Trial 5, Averaged" style="height:600px;">
+<img class="plain" src="img/oma2.png" alt="Trial 5, Averaged" style="height:600px;">
+
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+
+## Eigenmodes are interpersonally dependent
+<img class="plain" src="img/confmat.jpg" alt="Trial 5, Averaged" width="80%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+
+## Eigenmodes are not interpersonally dependent
+<img class="plain" src="img/commonmodes.png" alt="Trial 5, Averaged" width="60%">
+<br>
+<img class="plain" src="img/common1.gif" alt="Trial 5, Averaged" style="height:500px;">
+<img class="plain" src="img/common2.gif" alt="Trial 5, Averaged" style="height:500px;">
+
+---
+
+
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Unique Aspects of the Approach
+- Online
+- Robust Features
+- Spatio-temporal
+- Linear systems 
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Assumptions and Corner Conditions
+- Input is ***unknown***, ergodic 
+- Stationary
+- Linear (!)
+- Scaled
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Linearity and the Brain
+<img src="img/nonlinear.png" alt="Trial 5, Averaged" width="50%">
+
+:anguished:
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## We Must Expect Non-Linear Effects
+Leverage the model framework
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## An Adaptive Modal Approach 
+<img class="plain" src="img/adapt_est.png" alt="Trial 5, Averaged" width="50%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Adaptive UIOs
+
+<section>
+
+<img src="img/conference.png" alt="Trial 5, Averaged" width="50%">
+
+</section>
+<section>
+
+### Input Generation
+
+<img class="plain" src="img/zu.png" alt="Trial 5, Averaged" width="30%">
+<br>
+<img class="plain" src="img/zu2.png" alt="Trial 5, Averaged" width="30%">
+
+</section>
+
+<section>
+
+<img class="plain" src="img/state_error_3.png" alt="Trial 5, Averaged" style="height:600px;">
+<img class="plain" src="img/input_error_4.png" alt="Trial 5, Averaged" style="height:600px;">
+
+</section>
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Adaptive UIOs
+<img class="plain" src="img/UIO.jpg" alt="Trial 5, Averaged" width="60%">
+
+
+---
+
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## 3. Timeline
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Task Breakdown
+- Modeling outcomes
+- Improve UIO fidelity
+- Quantum extensions (stretch)
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+### A Burst of Delight
+<img src="img/curtains.jpg" alt="Trial 5, Averaged" width="40%">
+
+
 
 
 
