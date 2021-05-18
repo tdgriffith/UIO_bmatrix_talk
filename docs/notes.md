@@ -68,7 +68,6 @@ May 20, 2021
 
 
 - Rigorous
-- Dynamic
 - Transparent
 - Non-invasive
 - Physiological
@@ -217,7 +216,7 @@ $A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lamb
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 ## Assumptions and Corner Conditions
-- Input is ***unknown***, ergodic 
+- Input is ***unknown***, persistent 
 - Stationary
 - Linear (!)
 - Scaled
