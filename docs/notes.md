@@ -281,7 +281,7 @@ Leverage the model framework
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 ## Adaptive UIOs
-<img class="plain" src="img/UIO.jpg" alt="Trial 5, Averaged" width="60%">
+<img class="plain" src="img/UIO.jpg" alt="Trial 5, Averaged" width="95%">
 
 
 ---
