@@ -3,9 +3,9 @@
 # A Modal Approach to the Dynamics of Human Affect 
 
 ## T. Griffith
-Preliminary Examination
+#### Preliminary Examination
 
-May 20, 2021
+#### May 20, 2021
 
 ---
 
@@ -323,9 +323,152 @@ Leverage the model framework
 ## A Burst of Delight
 <img src="img/curtains.jpg" alt="Trial 5, Averaged" width="40%">
 
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+## Determination of Brain Eigenmodes
+### There is a Kalman Filter
+- There is a Kalman filter that can recover the states
+- $\hat{x}(k+1)=A\hat{x}(k)+K(k)(y(k)-C\hat{x}(k))$
+ - $K(k)$ is from $P$ in the data
+- Gather into a vector $\hat{X}$
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Determination of Brain Eigenmodes
+### Collect output data
+- $H \equiv \frac{Y_p}{Y_f}=RQ^T$
+- <img src="img/backup.png" alt="Trial 5, Averaged" style="height:300px;">
 
 
+---
 
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Determination of Brain Eigenmodes
+### Project the past onto the future
+
+- <img src="img/backup2.png" alt="Trial 5, Averaged" style="height:150px;">
+- <img src="img/backup3.png" alt="Trial 5, Averaged" style="height:150px;">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Determination of Brain Eigenmodes
+### Over determined LSQ problem 
+
+- <img src="img/backup4.png" alt="Trial 5, Averaged" style="height:150px;">
+- <img src="img/backup5.png" alt="Trial 5, Averaged" style="height:150px;">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+<section>
+
+<h2> Backup slides: UIO </h2>
+
+<img class="plain" src="img/backupslides/Slide6.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide7.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide8.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide9.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide10.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide11.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide12.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide13.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide14.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide15.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide16.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide17.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide33.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
+
+<section>
+
+<h2> Backup slides: UIO </h2>
+<img class="plain" src="img/backupslides/Slide34.PNG" alt="Trial 5, Averaged" width="80%">
+
+</section>
 
 
 
