@@ -145,7 +145,7 @@ $A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lamb
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-<img class="plain" src="img/journal.png" alt="Trial 5, Averaged" width="80%">
+<img class="plain" src="img/journal.png" alt="Trial 5, Averaged" width="50%">
 
 
 ---
