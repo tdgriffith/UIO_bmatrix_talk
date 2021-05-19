@@ -55,7 +55,7 @@ May 20, 2021
 - Automation conundrum
 - When SA is lost, [bad](https://dspace.mit.edu/handle/1721.1/70967) [things](https://sanfrancisco.cbslocal.com/2021/05/14/tesla-fatal-california-crash-fontana-was-on-autopilot-chp-says/) [happen](https://features.propublica.org/navy-uss-mccain-crash/navy-installed-touch-screen-steering-ten-sailors-paid-with-their-lives/)
 
-![Image of Yaktocat](img/mccain.jpg)
+![U.S.S. McCain Accident](img/mccain.jpg)
 
 
 
@@ -108,20 +108,20 @@ May 20, 2021
 ## 1. EEG is the measure of choice
 
 - Lots of existing knowledge
-- Widely avaliable
+- Widely available
 - Implementation
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 ## 2. System Identification
-<img class="plain" src="img/oma.png" alt="Trial 5, Averaged" width="60%">
+<img class="plain" src="img/oma_svg.png" alt="Trial 5, Averaged" width="60%">
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 ## 3. State space
-$x(k+1)=Ax(k)+Bu(k)$
+$x(k+1)=Ax(k)$
 
 $y(k)=Cx(k)$ 
 
@@ -152,7 +152,7 @@ $A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lamb
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## Eigenvectors are Traveling and Standing
+## Brain Modes  are Traveling and Standing
 <section>
 <img class="plain" src="img/animode.gif" alt="Trial 5, Averaged" style="height:600px;">
 <img class="plain" src="img/compass.jpg" alt="Trial 5, Averaged" style="height:600px;">
@@ -165,6 +165,8 @@ $A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lamb
 
 <section>
 
+#### - Comparing normalized complexity plots from two output only decompositions
+
 <img class="plain" src="img/eigenvectors.jpg" alt="Trial 5, Averaged" style="height:600px;">
 
 </section>
@@ -174,7 +176,8 @@ $A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lamb
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 
-## Eigenmodes are Physically Significant
+## Brain Modes are Physically Significant
+#### - An Eigenmode from 32 Channel EEG DEAP data
 <img class="plain" src="img/oma1.gif" alt="Trial 5, Averaged" style="height:600px;">
 <img class="plain" src="img/oma2.png" alt="Trial 5, Averaged" style="height:600px;">
 
@@ -185,7 +188,8 @@ $A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lamb
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 
-## Eigenmodes are interpersonally dependent
+## Brain Modes are Interpersonally Dependent
+#### - Subject Identification from BW Modes (Random Forrest)
 <img class="plain" src="img/confmat.jpg" alt="Trial 5, Averaged" width="80%">
 
 ---
@@ -193,11 +197,21 @@ $A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lamb
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 
-## Eigenmodes are not interpersonally dependent
-<img class="plain" src="img/commonmodes.png" alt="Trial 5, Averaged" width="60%">
-<br>
-<img class="plain" src="img/common1.gif" alt="Trial 5, Averaged" style="height:500px;">
-<img class="plain" src="img/common2.gif" alt="Trial 5, Averaged" style="height:500px;">
+## Some Brain Modes are not Interpersonally Dependent
+<img class="plain" src="img/commonmodes.png" alt="Trial 5, Averaged" width="40%">
+
+<table>
+  <tr>
+    <td><img class="plain" src="img/common1.gif" height=480></td>
+    <td><img class="plain" src="img/common2.gif" height=480></td>
+  </tr>
+  <tr>
+    <td><sub>Subject 1: Alpha Mode 1</sub></td>
+    <td><sub>Subject 2: Alpha Mode 1</sub></td>
+  </tr>
+ </table>
+
+
 
 ---
 
@@ -218,8 +232,8 @@ $A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lamb
 ## Assumptions and Corner Conditions
 - Input is ***unknown***, persistent 
 - Stationary
-- Linear (!)
 - Scaled
+- Linear (!)
 
 
 ---
@@ -270,6 +284,8 @@ Leverage the model framework
 
 <section>
 
+#### - Toy UIO Example with Uncertain Dynamics
+
 <img class="plain" src="img/state_error_3.png" alt="Trial 5, Averaged" style="height:600px;">
 <img class="plain" src="img/input_error_4.png" alt="Trial 5, Averaged" style="height:600px;">
 
@@ -280,7 +296,7 @@ Leverage the model framework
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## Adaptive UIOs
+## Adaptive UIOs for EEG
 <img class="plain" src="img/UIO.jpg" alt="Trial 5, Averaged" width="95%">
 
 
@@ -297,9 +313,9 @@ Leverage the model framework
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 ## Task Breakdown
-- Modeling outcomes
+- Modeling outcomes and affect
 - Improve UIO fidelity
-- Quantum extensions (stretch)
+- Quantum extensions and decision making (stretch)
 
 
 ---
