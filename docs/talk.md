@@ -313,6 +313,7 @@ Leverage the model framework
 # Task Breakdown
 - Modeling outcomes and affect
 - Improve UIO fidelity
+ - Develop exponential convergence rates for both input and state adaptive estimation
 - Quantum extensions and decision making (stretch)
 
 
