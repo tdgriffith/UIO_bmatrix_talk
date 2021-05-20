@@ -326,7 +326,7 @@ Leverage the model framework
 
 ---
 
-<!-- .slide: data-background="#ffffff" class="light" -->
+<!-- .slide: data-background="#500000" class="light" -->
 
 ---
 
