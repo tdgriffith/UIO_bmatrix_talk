@@ -1,475 +1,351 @@
 <!-- .slide: data-background="#500000" class="dark" -->
 
-# A Modal Approach to the Dynamics of Human Affect 
+# An Unknown B Matrix with Unknown Inputs
 
 ## T. Griffith
-#### Preliminary Examination
+#### Quantum Seminar
 
-#### May 20, 2021
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# 1. Motivation
-# 2. Approach
-# 3. Timeline
-
+#### July 09, 2021
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-# 1. Motivation
+# 1. UIO Recap
+# 2. Optimization of Linear Systems
+# 3. Identifying the "Best Fit" B Matrix for the Brain
+# 4. Application to Emotion Data
+# 5. Application to Movement Data
+# 6. Perterbations
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-# Robots that work with humans are increasingly prevalent
+# UIO Review: Estimator Architecture
 
-<img src="img/factory.jpg" alt="Trial 5, Averaged" width="32%">
-<img src="img/hospital.jpg" alt="Trial 5, Averaged" width="32%">
-<img src="img/army2.jpg" alt="Trial 5, Averaged" width="32%">
 
-<div style="text-align: right"> <sub><sub><sup><a href="https://www.wired.co.uk/article/robots-in-the-workplace">Spencer Lowell</a>, Wired, 2021</sup></sup></sub></div>
-<div style="text-align: right"> <sub><sub><sup><a href="https://www.flickr.com/photos/soldiersmediacenter/3966243098/in/photolist-73u2TG-dWQUxz-efXH4o-igJm3D-5q7oLi-6fqobG-dUigyC-5YRPEK-a92PNx-5YW2PN-6rGoZD-5SSAhx-4yRwME-5kS1mc-4LCHJ9">Army</a>, 2009</sup></sup></sub></div>
-
+<img class="plain" src="assets/adapt_est.png" alt="Trial 5, Averaged" width="50%">
 
 ---
 
-# Shared flow of information is implied
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-<img class="plain" src="img/arl-shared.png" alt="Trial 5, Averaged" width="60%">
+# A Polynomial Basis
 
+{$1,x,x^2,x^3,\ldots,x^n$}
 
-<div style="text-align: right"> <small>Barnes, Michael J., Jessie Y. Chen, and Susan Hill. Humans and autonomy: Implications of shared decision making for military operations. US Army Research Laboratory Aberdeen Proving Ground United States, 2017.</small></div>
+$1+2t+0.5t^2$
+
+<img class="plain" src="assets/poly_basis.png" alt="Trial 5, Averaged" width="50%">
 
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-# Not just performance
-
-- Automation conundrum
-- When SA is lost, [bad](https://dspace.mit.edu/handle/1721.1/70967) [things](https://sanfrancisco.cbslocal.com/2021/05/14/tesla-fatal-california-crash-fontana-was-on-autopilot-chp-says/) [happen](https://features.propublica.org/navy-uss-mccain-crash/navy-installed-touch-screen-steering-ten-sailors-paid-with-their-lives/)
-
-![U.S.S. McCain Accident](img/mccain.jpg)
+# Polynomial Basis Comparison: Fourier 1-300 hz
 
 
+<img class="plain" src="assets/fourier_EEG.png" alt="Trial 5, Averaged" width="75%">
 
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## Need descriptions of human cognition and decision making as it is relevant to the ***dynamics*** of human-robot interaction.
+# Polynomial Basis Comparison: 1-6th 
 
 
-- Rigorous
-- Transparent
-- Non-invasive
-- Physiological
+<img class="plain" src="assets/poly_EEG.png" alt="Trial 5, Averaged" width="75%">
 
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# How is it done now?
-<img class="plain" src="img/sota.jpg" alt="Trial 5, Averaged" width="60%">
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-#  How is it done now?
-<img class="plain" src="img/bar_rev.png" alt="Trial 5, Averaged" width="60%">
 
 ---
 
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-# 2. Approach
+# Some Obscured Assumptions
+
+- $B=I$
+ - $\dot{x}=Ax+Bu$
+- SIMO 
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+# A Better B Matrix?
+- Alter B to improve modeling error $e_y$
+ - Convex Optimization
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+# Convex Optimization
+an optimization problem in which the objective function is a ***convex function*** and the feasible set is a ***convex set***
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+# the objective function is a ***convex function***
+<img class="plain" src="assets/convex_function_ex.png" alt="Trial 5, Averaged" width="75%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+# the feasible set is a ***convex set***
+<img class="plain" src="assets/convex_set.png" alt="Trial 5, Averaged" width="40%">
+<img class="plain" src="assets/not_convex_set.png" alt="Trial 5, Averaged" width="40%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+# Important Properties of Convex Problems
+- every local minimum is a global minimum
+- gradient descent converges in polynomial time
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+# *A* Convex Function for B matrix optimization
+- $\min ||y-\hat{y}-C \Delta B \hat{u}||_2$
+- ***not*** the only possible minimization
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+# B Matrix Optimization Example
+- $\min ||y-\hat{y}-C \Delta B \hat{u}||_2$
+- $B=\begin{bmatrix} 1.2 \\\ 1 \\\ 1.6 \end{bmatrix}$, $B_m=\begin{bmatrix} 1 \\\ 1 \\\ 1 \end{bmatrix}$
+- $\Delta B=\begin{bmatrix} 0.18 \\\ 0 \\\ 0.37 \end{bmatrix}$, $B_f=\begin{bmatrix} 1.18 \\\ 1 \\\ 1.37 \end{bmatrix}$
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+# B Matrix Optimization Example
+- $\min ||y-\hat{y}-C \Delta B \hat{u}||_2$
+<img class="plain" src="assets/toy_Bopt2.png" alt="Trial 5, Averaged" width="90%">
 
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-# Key Components of the Approach
-<img class="plain" src="img/features2.jpg" alt="Trial 5, Averaged" width="60%">
-
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-# 1. EEG is the measure of choice
-
-- Lots of existing knowledge
-- Widely available
-- Implementation
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-# 2. System Identification
-<img class="plain" src="img/oma_svg.png" alt="Trial 5, Averaged" width="60%">
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-# 3. State space
-$x(k+1)=Ax(k)$
-
-$y(k)=Cx(k)$ 
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-# 4. Modal decomposition
-$A=W \Lambda V$
-
-$A=\begin{bmatrix} w_1 & w_2 &  \ldots & w_n \end{bmatrix} \begin{bmatrix} \lambda_1 & \ldots & 0 \\\ \vdots & \ddots & \vdots \\\ 0 & \ldots & \lambda_n \end{bmatrix} \begin{bmatrix} v_1^T \\\ v_2^T \\\ \vdots \\\ v_n^T \end{bmatrix}$ 
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# Modeling Overview
-<img class="plain" src="img/overview.png" alt="Trial 5, Averaged" width="20%">
+# B Matrix on EEG Data
+<img class="plain" src="assets/Bopt.png" alt="Trial 5, Averaged" width="90%">
 
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-<img class="plain" src="img/journal.png" alt="Trial 5, Averaged" width="50%">
+# B Matrix on EEG Data
+<img class="plain" src="assets/B_ic.jpg" alt="Trial 5, Averaged" width="70%">
 
 
 ---
 
+
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-# Brain Modes  are Traveling and Standing
+# B Matrix Maps
+<img class="plain" src="assets/UIO_opt.jpg" alt="Trial 5, Averaged" width="45%">
+<img class="plain" src="assets/Bmap2.png" alt="Trial 5, Averaged" width="45%">
+
+
+---
+
+
+
+<!-- .slide: data-background="#ffffff" class="light" -->
 <section>
-<img class="plain" src="img/animode.gif" alt="Trial 5, Averaged" style="height:600px;">
-<img class="plain" src="img/compass.jpg" alt="Trial 5, Averaged" style="height:600px;">
+
+<h2> B Matrix on EEG Data: ***Satisfaction*** </h2>
+<img class="plain" src="assets/sat_map.png" alt="Trial 5, Averaged" width="60%">
+
 </section>
 
 <section>
-<img class="plain" src="img/animode2.gif" alt="Trial 5, Averaged" style="height:600px;">
-<img class="plain" src="img/compass2.jpg" alt="Trial 5, Averaged" style="height:600px;">
+
+<img class="plain" src="assets/sat_avg.png" alt="Trial 5, Averaged" width="60%">
+
+</section>
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+<section>
+<h2> B Matrix on EEG Data: ***Surprise*** </h2>
+
+<img class="plain" src="assets/surp_map.png" alt="Trial 5, Averaged" width="60%">
+
 </section>
 
 <section>
-<h2> - Comparing normalized complexity plots from two output only decompositions </h4>
 
-<img class="plain" src="img/eigenvectors.jpg" alt="Trial 5, Averaged" style="height:600px;">
+<img class="plain" src="assets/surp_avg.png" alt="Trial 5, Averaged" width="60%">
+
 </section>
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
+<h2> B Matrix on EEG Data: ***Fear*** </h2>
+<section>
+<img class="plain" src="assets/fear_map.png" alt="Trial 5, Averaged" width="60%">
 
-# Brain Modes are Physically Significant
-## - An Eigenmode from 32 Channel EEG DEAP data
-<img class="plain" src="img/oma1.gif" alt="Trial 5, Averaged" style="height:600px;">
-<img class="plain" src="img/oma2.png" alt="Trial 5, Averaged" style="height:600px;">
+</section>
 
+<section>
 
+<img class="plain" src="assets/fear_avg.png" alt="Trial 5, Averaged" width="60%">
 
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-
-# Brain Modes are Interpersonally Dependent
-## - Subject Identification from BW Modes (Random Forrest)
-<img class="plain" src="img/confmat.jpg" alt="Trial 5, Averaged" width="80%">
+</section>
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
+<section>
 
-
-# Some Brain Modes are not Interpersonally Dependent
-<img class="plain" src="img/commonmodes.png" alt="Trial 5, Averaged" width="40%">
-
+<h2> B Matrix on EEG Data: ***HVHA*** </h2>
 <table>
   <tr>
-    <td><img class="plain" src="img/common1.gif" height=480></td>
-    <td><img class="plain" src="img/common2.gif" height=480></td>
+    <td><img class="plain" src="assets/norm_HVHA_S1.png" height=350></td>
+    <td><img class="plain" src="assets/norm_HVHA_S2.png" height=350></td>
   </tr>
   <tr>
-    <td><sub>Subject 1: Alpha Mode 1</sub></td>
-    <td><sub>Subject 2: Alpha Mode 1</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 1: HVHA</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 2: HVHA</sub></td>
+  </tr>
+  <tr>
+    <td><img class="plain" src="assets/norm_HVHA_S3.png" height=350></td>
+    <td><img class="plain" src="assets/norm_HVHA_S4.png" height=350></td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 3: HVHA</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 4: HVHA</sub></td>
   </tr>
  </table>
 
-
-
----
-
-
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# Unique Aspects of the Approach
-- Online
-- Robust Features
-- Spatio-temporal
-- Linear systems 
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# Assumptions and Corner Conditions
-- Input is ***unknown***, persistent 
-- Stationary
-- Scaled
-- Linear (!)
-
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# Linearity and the Brain
-<img src="img/nonlinear.png" alt="Trial 5, Averaged" width="50%">
-
-:anguished:
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# We Must Expect Non-Linear Effects
-Leverage the model framework
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# An Adaptive Modal Approach 
-<img class="plain" src="img/adapt_est.png" alt="Trial 5, Averaged" width="50%">
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# Adaptive UIOs
-
-<section>
-
-<img src="img/conference.png" alt="Trial 5, Averaged" width="50%">
-
-</section>
-<section>
-
-<h2> Input Generation </h2>
-
-<img class="plain" src="img/zu.png" alt="Trial 5, Averaged" width="30%">
-<br>
-<img class="plain" src="img/zu2.png" alt="Trial 5, Averaged" width="30%">
-
 </section>
 
 <section>
 
-<h2>- Toy UIO Example with Uncertain Dynamics </h2>
 
-<img class="plain" src="img/state_error_3.png" alt="Trial 5, Averaged" style="height:600px;">
-<img class="plain" src="img/input_error_4.png" alt="Trial 5, Averaged" style="height:600px;">
+<img class="plain" src="assets/norm_HVHA.png" alt="Trial 5, Averaged" width="60%">
 
 </section>
-
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# Adaptive UIOs for EEG
-<img class="plain" src="img/UIO.jpg" alt="Trial 5, Averaged" width="95%">
-
-
----
-
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# 3. Timeline
-
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-# Task Breakdown
-- Modeling outcomes and affect
-- Improve UIO fidelity
- - Develop exponential convergence rates for both input and state adaptive estimation
-- Quantum extensions and decision making (stretch)
-
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-## A Burst of Delight
-<img src="img/curtains.jpg" alt="Trial 5, Averaged" width="40%">
-
----
-
-<!-- .slide: data-background="#500000" class="light" -->
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-## Determination of Brain Eigenmodes
-### There is a Kalman Filter
-- There is a Kalman filter that can recover the states
-- $\hat{x}(k+1)=A\hat{x}(k)+K(k)(y(k)-C\hat{x}(k))$
- - $K(k)$ is from $P$ in the data
-- Gather into a vector $\hat{X}$
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-## Determination of Brain Eigenmodes
-### Collect output data
-- $H \equiv \frac{Y_p}{Y_f}=RQ^T$
-- <img src="img/backup.png" alt="Trial 5, Averaged" style="height:300px;">
-
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-## Determination of Brain Eigenmodes
-### Project the past onto the future
-
-- <img src="img/backup2.png" alt="Trial 5, Averaged" style="height:150px;">
-- <img src="img/backup3.png" alt="Trial 5, Averaged" style="height:150px;">
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-
-## Determination of Brain Eigenmodes
-### Over determined LSQ problem 
-
-- <img src="img/backup4.png" alt="Trial 5, Averaged" style="height:150px;">
-- <img src="img/backup5.png" alt="Trial 5, Averaged" style="height:150px;">
-
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 <section>
-
-<h2> Backup slides: UIO </h2>
-
-<img class="plain" src="img/backupslides/Slide6.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide7.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide8.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide9.PNG" alt="Trial 5, Averaged" width="80%">
+<h2> B Matrix on EEG Data: ***HVLA*** </h2>
+<table>
+  <tr>
+    <td><img class="plain" src="assets/norm_HVLA_S1.png" height=350></td>
+    <td><img class="plain" src="assets/norm_HVLA_S2.png" height=350></td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 1: HVLA</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 2: HVLA</sub></td>
+  </tr><section>
+  <tr>
+    <td><img class="plain" src="assets/norm_HVLA_S3.png" height=350></td>
+    <td><img class="plain" src="assets/norm_HVLA_S4.png" height=350></td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 3: HVLA</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 4: HVLA</sub></td>
+  </tr>
+ </table>
 
 </section>
 
 <section>
 
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide10.PNG" alt="Trial 5, Averaged" width="80%">
+
+<img class="plain" src="assets/norm_HVLA.png" alt="Trial 5, Averaged" width="60%">
+</section>
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+<h2> B Matrix on EEG Data: ***LVHA*** </h2>
+<section>
+<table>
+  <tr>
+    <td><img class="plain" src="assets/norm_LVHA_S1.png" height=350></td>
+    <td><img class="plain" src="assets/norm_LVHA_S2.png" height=350></td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 1: LVHA</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 2: LVHA</sub></td>
+  </tr>
+  <tr>
+    <td><img class="plain" src="assets/norm_LVHA_S3.png" height=350></td>
+    <td><img class="plain" src="assets/norm_LVHA_S4.png" height=350></td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 3: LVHA</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 4: LVHA</sub></td>
+  </tr>
+ </table>
 
 </section>
 
 <section>
 
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide11.PNG" alt="Trial 5, Averaged" width="80%">
+<img class="plain" src="assets/norm_LVHA.png" alt="Trial 5, Averaged" width="60%">
+
+</section>
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+<h2> B Matrix on EEG Data: ***LVLA***  </h2>
+<section>
+
+
+<table>
+  <tr>
+    <td><img class="plain" src="assets/norm_LVLA_S1.png" height=350></td>
+    <td><img class="plain" src="assets/norm_LVLA_S2.png" height=350></td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 1: LVLA</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 2: LVLA</sub></td>
+  </tr>
+  <tr>
+    <td><img class="plain" src="assets/norm_LVLA_S3.png" height=350></td>
+    <td><img class="plain" src="assets/norm_LVLA_S4.png" height=350></td>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 3: LVLA</sub></td>
+    <td style="text-align: center; vertical-align: middle;"><sub>Subject 4: LVLA</sub></td>
+  </tr>
+ </table>
 
 </section>
 
 <section>
 
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide12.PNG" alt="Trial 5, Averaged" width="80%">
+<img class="plain" src="assets/norm_LVLA.png" alt="Trial 5, Averaged" width="60%">
 
 </section>
 
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide13.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide14.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide15.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide16.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide17.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide33.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
-
-<section>
-
-<h2> Backup slides: UIO </h2>
-<img class="plain" src="img/backupslides/Slide34.PNG" alt="Trial 5, Averaged" width="80%">
-
-</section>
 
 
 
