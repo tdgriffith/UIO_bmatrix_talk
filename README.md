@@ -1,7 +1,8 @@
-# prelims
-Slides for oral portion of my preliminary exam. 
+# UIO and B matrix talk 
+## 2021-07-09
+Slides for quantum talk in early july. 
 
-https://tdgriffith.github.io/prelims/
+https://tdgriffith.github.io/UIO_bmatrix_talk/
 
 ## Previewing locally
 
