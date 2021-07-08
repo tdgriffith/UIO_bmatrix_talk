@@ -39,6 +39,76 @@
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
+## Mode 2
+
+<img class="plain" src="assets/mode2.gif" alt="Trial 5, Averaged" height="700">
+<img class="plain" src="assets/fmri2.png" alt="Trial 5, Averaged" height="700">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Mode 3
+
+<img class="plain" src="assets/mode3.gif" alt="Trial 5, Averaged" height="700">
+<img class="plain" src="assets/fmri3.png" alt="Trial 5, Averaged" height="700">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Mode 4
+
+<img class="plain" src="assets/mode4.gif" alt="Trial 5, Averaged" height="700">
+<img class="plain" src="assets/fmri4.png" alt="Trial 5, Averaged" height="700">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Mode 5
+
+<img class="plain" src="assets/mode5.gif" alt="Trial 5, Averaged" height="700">
+<img class="plain" src="assets/fmri5.png" alt="Trial 5, Averaged" height="700">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Mode 6
+
+<img class="plain" src="assets/mode6.gif" alt="Trial 5, Averaged" height="700">
+<img class="plain" src="assets/fmri6.png" alt="Trial 5, Averaged" height="700">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Mode 7
+
+<img class="plain" src="assets/mode7.gif" alt="Trial 5, Averaged" height="700">
+<img class="plain" src="assets/fmri7.png" alt="Trial 5, Averaged" height="700">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Mode 8
+
+<img class="plain" src="assets/mode8.gif" alt="Trial 5, Averaged" height="700">
+<img class="plain" src="assets/fmri8.png" alt="Trial 5, Averaged" height="700">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
 ## 2. UIO Recap
 
 ---
