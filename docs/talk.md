@@ -31,8 +31,8 @@
 
 ## Mode 1
 
-<img class="plain" src="assets/square_quad_4_361.gif" alt="Trial 5, Averaged" width="50%">
-<img class="plain" src="assets/tiled_3_flip.png" alt="Trial 5, Averaged" width="50%">
+<img class="plain" src="assets/square_quad_4_361.gif" alt="Trial 5, Averaged" width="400%">
+<img class="plain" src="assets/tiled_3_flip.png" alt="Trial 5, Averaged" width="400%">
 
 
 ---
