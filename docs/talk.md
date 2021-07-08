@@ -260,6 +260,15 @@ an optimization problem in which the objective function is a ***convex function*
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
+## B Matrix on EEG Data: ***HVHA*** 
+
+<img class="plain" src="assets/HVHA_map.png" alt="Trial 5, Averaged" width="60%">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
 ## B Matrix on EEG Data: ***HVLA*** 
 
 <img class="plain" src="assets/HVLA_map.png" alt="Trial 5, Averaged" width="60%">
@@ -317,7 +326,7 @@ an optimization problem in which the objective function is a ***convex function*
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## B Matrix on EEG Data: ***Right Hand***  
+## B Matrix on EEG Data: ***Resting***  
 
 <img class="plain" src="assets/rest_map.png" alt="Trial 5, Averaged" width="60%">
 
@@ -325,7 +334,7 @@ an optimization problem in which the objective function is a ***convex function*
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## B Matrix on EEG Data: ***Right Hand***  
+## B Matrix on EEG Data: ***All Averages***  
 
 <img class="plain" src="assets/all_hand_map.png" alt="Trial 5, Averaged" width="60%">
 
