@@ -12,11 +12,17 @@
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 # 1. UIO Recap
-# 2. Optimization of Linear Systems
+# 2. Optimized Parameterizations
 # 3. Identifying the "Best Fit" B Matrix for the Brain
 # 4. Application to Emotion Data
 # 5. Application to Movement Data
-# 6. Perterbations
+# 6. Perturbations
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## 1. UIO Recap
 
 ---
 
@@ -32,12 +38,17 @@
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 # A Polynomial Basis
-
 {$1,x,x^2,x^3,\ldots,x^n$}
 
-$1+2t+0.5t^2$
+$u(t)=1+2t+0.5t^2$
+
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+    In some cases the natural basis functions for $u(t)$ are not clearly defined by the available data. For such cases it is usually effective to use a polynomial spline waveform-model
+</blockquote>
 
 <img class="plain" src="assets/poly_basis.png" alt="Trial 5, Averaged" width="50%">
+
+<div style="text-align: right"> <small>Johnson, C. D. (1989, January). Effective techniques for the identification and accommodation of disturbances. In Pros. 3rd Annual NASA/DOD Controls-Structures Interaction (CSI) Technical Conf. (p. 163).</small></div>
 
 
 ---
@@ -83,6 +94,12 @@ $1+2t+0.5t^2$
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
+## 2. Optimized Parameterizations
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
 # Convex Optimization
 an optimization problem in which the objective function is a ***convex function*** and the feasible set is a ***convex set***
 
@@ -93,6 +110,10 @@ an optimization problem in which the objective function is a ***convex function*
 # the objective function is a ***convex function***
 <img class="plain" src="assets/convex_function_ex.png" alt="Trial 5, Averaged" width="75%">
 
+<div style="text-align: right"> <small>
+<a href="https://en.wikipedia.org/wiki/Convex_function#/media/File:ConvexFunction.svg">Image Source</a>
+</small></div>
+
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
@@ -101,6 +122,10 @@ an optimization problem in which the objective function is a ***convex function*
 <img class="plain" src="assets/convex_set.png" alt="Trial 5, Averaged" width="40%">
 <img class="plain" src="assets/not_convex_set.png" alt="Trial 5, Averaged" width="40%">
 
+<div style="text-align: right"> <small>
+<a href="https://en.wikipedia.org/wiki/Convex_set">Image Source</a>
+</small></div>
+
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
@@ -108,6 +133,12 @@ an optimization problem in which the objective function is a ***convex function*
 # Important Properties of Convex Problems
 - every local minimum is a global minimum
 - gradient descent converges in polynomial time
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## 3. Best Fit B Matricies
 
 ---
 
@@ -122,9 +153,15 @@ an optimization problem in which the objective function is a ***convex function*
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 # B Matrix Optimization Example
-- $\min ||y-\hat{y}-C \Delta B \hat{u}||_2$
-- $B=\begin{bmatrix} 1.2 \\\ 1 \\\ 1.6 \end{bmatrix}$, $B_m=\begin{bmatrix} 1 \\\ 1 \\\ 1 \end{bmatrix}$
-- $\Delta B=\begin{bmatrix} 0.18 \\\ 0 \\\ 0.37 \end{bmatrix}$, $B_f=\begin{bmatrix} 1.18 \\\ 1 \\\ 1.37 \end{bmatrix}$
+- 3x3 example
+ - $\dot{\hat{x}} = A_m x + B \hat{u}$
+ - $A_m \neq A$ 
+- ***$\min ||y-\hat{y}-C \Delta B \hat{u}||_2$***
+- $B=\begin{bmatrix} 1.2 \\\ 1 \\\ 1.6 \end{bmatrix}$, 
+- $B_m=\begin{bmatrix} 1 \\\ 1 \\\ 1 \end{bmatrix}$
+
+
+
 
 ---
 
@@ -132,7 +169,10 @@ an optimization problem in which the objective function is a ***convex function*
 
 # B Matrix Optimization Example
 - $\min ||y-\hat{y}-C \Delta B \hat{u}||_2$
-<img class="plain" src="assets/toy_Bopt2.png" alt="Trial 5, Averaged" width="90%">
+- $\Delta B=\begin{bmatrix} 0.18 \\\ 0 \\\ 0.37 \end{bmatrix}$, 
+- $B_f=\begin{bmatrix} 1.18 \\\ 1 \\\ 1.37 \end{bmatrix}$
+
+<img class="plain" src="assets/toy_Bopt2.png" alt="Trial 5, Averaged" width="55%">
 
 
 ---
@@ -156,195 +196,189 @@ an optimization problem in which the objective function is a ***convex function*
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-# B Matrix Maps
+# Current models
 <img class="plain" src="assets/UIO_opt.jpg" alt="Trial 5, Averaged" width="45%">
 <img class="plain" src="assets/Bmap2.png" alt="Trial 5, Averaged" width="45%">
 
 
 ---
 
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## 4. Application to Emotion Data
+
+---
+
 
 
 <!-- .slide: data-background="#ffffff" class="light" -->
-<section>
 
-<h2> B Matrix on EEG Data: ***Satisfaction*** </h2>
+
+## B Matrix on EEG Data: ***Satisfaction (T1)*** 
 <img class="plain" src="assets/sat_map.png" alt="Trial 5, Averaged" width="60%">
 
-</section>
 
-<section>
-
-<img class="plain" src="assets/sat_avg.png" alt="Trial 5, Averaged" width="60%">
-
-</section>
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-<section>
-<h2> B Matrix on EEG Data: ***Surprise*** </h2>
+## B Matrix on EEG Data: ***Surprise (T2)*** 
 
 <img class="plain" src="assets/surp_map.png" alt="Trial 5, Averaged" width="60%">
 
-</section>
-
-<section>
-
-<img class="plain" src="assets/surp_avg.png" alt="Trial 5, Averaged" width="60%">
-
-</section>
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-<h2> B Matrix on EEG Data: ***Fear*** </h2>
-<section>
+## B Matrix on EEG Data: ***Fear (T8)*** 
+
 <img class="plain" src="assets/fear_map.png" alt="Trial 5, Averaged" width="60%">
 
-</section>
 
-<section>
-
-<img class="plain" src="assets/fear_avg.png" alt="Trial 5, Averaged" width="60%">
-
-</section>
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-<section>
-
-<h2> B Matrix on EEG Data: ***HVHA*** </h2>
-<table>
-  <tr>
-    <td><img class="plain" src="assets/norm_HVHA_S1.png" height=350></td>
-    <td><img class="plain" src="assets/norm_HVHA_S2.png" height=350></td>
-  </tr>
-  <tr>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 1: HVHA</sub></td>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 2: HVHA</sub></td>
-  </tr>
-  <tr>
-    <td><img class="plain" src="assets/norm_HVHA_S3.png" height=350></td>
-    <td><img class="plain" src="assets/norm_HVHA_S4.png" height=350></td>
-  </tr>
-  <tr>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 3: HVHA</sub></td>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 4: HVHA</sub></td>
-  </tr>
- </table>
-
-</section>
-
-<section>
-
-
-<img class="plain" src="assets/norm_HVHA.png" alt="Trial 5, Averaged" width="60%">
-
-</section>
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
-<section>
-<h2> B Matrix on EEG Data: ***HVLA*** </h2>
-<table>
-  <tr>
-    <td><img class="plain" src="assets/norm_HVLA_S1.png" height=350></td>
-    <td><img class="plain" src="assets/norm_HVLA_S2.png" height=350></td>
-  </tr>
-  <tr>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 1: HVLA</sub></td>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 2: HVLA</sub></td>
-  </tr><section>
-  <tr>
-    <td><img class="plain" src="assets/norm_HVLA_S3.png" height=350></td>
-    <td><img class="plain" src="assets/norm_HVLA_S4.png" height=350></td>
-  </tr>
-  <tr>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 3: HVLA</sub></td>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 4: HVLA</sub></td>
-  </tr>
- </table>
-
-</section>
-
-<section>
-
-
-<img class="plain" src="assets/norm_HVLA.png" alt="Trial 5, Averaged" width="60%">
-</section>
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-<h2> B Matrix on EEG Data: ***LVHA*** </h2>
-<section>
-<table>
-  <tr>
-    <td><img class="plain" src="assets/norm_LVHA_S1.png" height=350></td>
-    <td><img class="plain" src="assets/norm_LVHA_S2.png" height=350></td>
-  </tr>
-  <tr>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 1: LVHA</sub></td>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 2: LVHA</sub></td>
-  </tr>
-  <tr>
-    <td><img class="plain" src="assets/norm_LVHA_S3.png" height=350></td>
-    <td><img class="plain" src="assets/norm_LVHA_S4.png" height=350></td>
-  </tr>
-  <tr>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 3: LVHA</sub></td>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 4: LVHA</sub></td>
-  </tr>
- </table>
+## B Matrix on EEG Data: ***HVHA (T13)*** 
 
-</section>
+<img class="plain" src="assets/HVHA_map.png" alt="Trial 5, Averaged" width="60%">
 
-<section>
+---
 
-<img class="plain" src="assets/norm_LVHA.png" alt="Trial 5, Averaged" width="60%">
+<!-- .slide: data-background="#ffffff" class="light" -->
+## Comparing the same "emotion"
 
-</section>
+<img class="plain" src="assets/val.jpg" alt="Trial 5, Averaged" width="45%">
+
+<div style="text-align: right"> <small>Mneimne, M., Powers, A. S., Walton, K. E., Kosson, D. S., Fonda, S., & Simonetti, J. (2010). Emotional valence and arousal effects on memory and hemispheric asymmetries. Brain and Cognition, 74(1), 10-17.</small></div>
+
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-<h2> B Matrix on EEG Data: ***LVLA***  </h2>
-<section>
+## B Matrix on EEG Data: ***HVLA*** 
+
+<img class="plain" src="assets/HVLA_map.png" alt="Trial 5, Averaged" width="60%">
 
 
-<table>
-  <tr>
-    <td><img class="plain" src="assets/norm_LVLA_S1.png" height=350></td>
-    <td><img class="plain" src="assets/norm_LVLA_S2.png" height=350></td>
-  </tr>
-  <tr>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 1: LVLA</sub></td>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 2: LVLA</sub></td>
-  </tr>
-  <tr>
-    <td><img class="plain" src="assets/norm_LVLA_S3.png" height=350></td>
-    <td><img class="plain" src="assets/norm_LVLA_S4.png" height=350></td>
-  </tr>
-  <tr>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 3: LVLA</sub></td>
-    <td style="text-align: center; vertical-align: middle;"><sub>Subject 4: LVLA</sub></td>
-  </tr>
- </table>
+---
 
-</section>
+<!-- .slide: data-background="#ffffff" class="light" -->
 
-<section>
+## B Matrix on EEG Data: ***LVHA*** 
 
-<img class="plain" src="assets/norm_LVLA.png" alt="Trial 5, Averaged" width="60%">
+<img class="plain" src="assets/LVHA_map.png" alt="Trial 5, Averaged" width="60%">
 
-</section>
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## B Matrix on EEG Data: ***LVLA***  
+
+<img class="plain" src="assets/LVLA_map.png" alt="Trial 5, Averaged" width="60%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## B Matrix on EEG Data: ***Avg. Quadrants***  
+
+<img class="plain" src="assets/all_emot_map.png" alt="Trial 5, Averaged" width="60%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## 5. Application to Movement Data
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## B Matrix on EEG Data: ***Left Hand***  
+
+<img class="plain" src="assets/lh_map.png" alt="Trial 5, Averaged" width="60%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## B Matrix on EEG Data: ***Right Hand***  
+
+<img class="plain" src="assets/rh_map.png" alt="Trial 5, Averaged" width="60%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## B Matrix on EEG Data: ***Right Hand***  
+
+<img class="plain" src="assets/rest_map.png" alt="Trial 5, Averaged" width="60%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## B Matrix on EEG Data: ***Right Hand***  
+
+<img class="plain" src="assets/all_hand_map.png" alt="Trial 5, Averaged" width="60%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## 6. Perturbations (V.)
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Systems with unmodeled dynamics
+- $\dot{x}=A_m x + B_m u$
+- $y=C_m x$
+- b.c. of uncertainty in real parameters:
+ - $A_m = A + \sum \delta_i A_i$
+ - $B_m = B + \sum \delta_i B_i$
+ - $C_m = C+ \sum \delta_i C_i$
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Collect the uncertainty 
+- $A_m = A + \sum \delta_i A_i = A+W_2 \Delta W_1$
+
+<img class="plain" src="assets/perturb.png" alt="Trial 5, Averaged" width="60%">
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Simple Example
+- $A= \begin{bmatrix} -3 & -2 \\\ 7 & -1 \end{bmatrix}$
+- Parametric uncertainty in 2 degrees:
+ - $A_1=\begin{bmatrix} -w_1 & w_1 \\\ w_1 & -w_1 \end{bmatrix}$
+ - $A_2=\begin{bmatrix} 0 & -w_2 \\\ 2 w_2 & 0 \end{bmatrix}$
+
+- $A_m = A + \delta_1 \begin{bmatrix} -w_1 & w_1 \\\ w_1 & -w_1 \end{bmatrix} + \delta_2 \begin{bmatrix} 0 & -w_2 \\\ 2 w_2 & 0 \end{bmatrix}$
+- $A_m = A + \begin{bmatrix} -w_1 & 0 & -w_2 \\\ w_1 & 2 w_2 & 0 \end{bmatrix} \begin{bmatrix} \delta_1 & 0 & 0 \\\ 0 & \delta_2 & 0 \\\ 0 & 0 & \delta_2 \end{bmatrix} \begin{bmatrix} 1 & -1 \\\ 1 & 0 \\\ 0 & 1 \end{bmatrix} $ 
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## EEG Example
+
+
+
+
+
 
 
 

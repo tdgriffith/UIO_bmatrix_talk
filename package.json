@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "chromium": "^3.0.2",
+    "decktape": "^2.4.3",
+    "puppeteer": "^10.1.0"
+  }
+}
