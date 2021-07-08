@@ -17,7 +17,7 @@
 # 4. Identifying the "Best Fit" B Matrix for the Brain
 # 5. Application to Emotion Data
 # 6. Application to Movement Data
-# 7. Perturbations
+# 7. Perturbations (time permitting)
 
 ---
 
@@ -328,14 +328,6 @@ an optimization problem in which the objective function is a ***convex function*
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
-
-## B Matrix on EEG Data: ***HVHA (T13)*** 
-
-<img class="plain" src="assets/HVHA_map.png" alt="Trial 5, Averaged" width="60%">
-
----
-
-<!-- .slide: data-background="#ffffff" class="light" -->
 ## Comparing the same "emotion"
 
 <img class="plain" src="assets/val.jpg" alt="Trial 5, Averaged" width="45%">
@@ -426,6 +418,18 @@ an optimization problem in which the objective function is a ***convex function*
 <img class="plain" src="assets/all_hand_map.png" alt="Trial 5, Averaged" width="60%">
 
 ---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## A unique solution?
+- B matrix is different for everyone
+ - A math construct or physical significance?
+- A unique input?
+
+
+---
+
+
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
