@@ -11,18 +11,35 @@
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-# 1. UIO Recap
-# 2. Optimized Parameterizations
-# 3. Identifying the "Best Fit" B Matrix for the Brain
-# 4. Application to Emotion Data
-# 5. Application to Movement Data
-# 6. Perturbations
+# 1. fMRI Comparisons
+# 2. UIO Recap
+# 3. Optimized Parameterizations
+# 4. Identifying the "Best Fit" B Matrix for the Brain
+# 5. Application to Emotion Data
+# 6. Application to Movement Data
+# 7. Perturbations
 
 ---
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## 1. UIO Recap
+## 1. fMRI Comparisons
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## Mode 1
+
+<img class="plain" src="assets/square_quad_4_361.gif" alt="Trial 5, Averaged" width="50%">
+<img class="plain" src="assets/tiled_3_flip.png" alt="Trial 5, Averaged" width="50%">
+
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
+## 2. UIO Recap
 
 ---
 
@@ -94,7 +111,7 @@ $u(t)=1+2t+0.5t^2$
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## 2. Optimized Parameterizations
+## 3. Optimized Parameterizations
 
 ---
 
@@ -138,7 +155,7 @@ an optimization problem in which the objective function is a ***convex function*
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## 3. Best Fit B Matricies
+## 4. Best Fit B Matricies
 
 ---
 
@@ -205,7 +222,7 @@ an optimization problem in which the objective function is a ***convex function*
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## 4. Application to Emotion Data
+## 5. Application to Emotion Data
 
 ---
 
@@ -304,7 +321,7 @@ an optimization problem in which the objective function is a ***convex function*
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## 5. Application to Movement Data
+## 6. Application to Movement Data
 
 ---
 
@@ -342,7 +359,7 @@ an optimization problem in which the objective function is a ***convex function*
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
-## 6. Perturbations (V.)
+## 7. Perturbations (V.)
 
 ---
 

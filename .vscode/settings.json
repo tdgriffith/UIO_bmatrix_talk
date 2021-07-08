@@ -6,5 +6,6 @@
         "markdown",
         "latex",
         "plaintext"
-    ]
+    ],
+    "python.pythonPath": "C:\\Users\\Tris\\anaconda3\\python.exe"
 }
