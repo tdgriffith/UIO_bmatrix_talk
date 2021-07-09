@@ -29,6 +29,14 @@
 
 <!-- .slide: data-background="#ffffff" class="light" -->
 
+## fMRI and OMA
+- $Y \approx UV^T $
+- $y(k) \approx \sum \alpha_i C u_i \lambda_i^k$
+
+---
+
+<!-- .slide: data-background="#ffffff" class="light" -->
+
 ## Mode 1
 
 <img class="plain" src="assets/square_quad_4_361.gif" alt="Trial 5, Averaged" height="700">
