@@ -292,7 +292,7 @@ an optimization problem in which the objective function is a ***convex function*
 <!-- .slide: data-background="#ffffff" class="light" -->
 
 # Current models
-<img class="plain" src="assets/UIO_opt.jpg" alt="Trial 5, Averaged" width="45%">
+<img class="plain" src="assets/UIO_opt.png" alt="Trial 5, Averaged" width="45%">
 <img class="plain" src="assets/Bmap2.png" alt="Trial 5, Averaged" width="45%">
 
 
