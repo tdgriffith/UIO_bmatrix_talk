@@ -17,7 +17,7 @@
 # 4. Identifying the "Best Fit" B Matrix for the Brain
 # 5. Application to Emotion Data
 # 6. Application to Movement Data
-# 7. Perturbations (time permitting)
+# ~~7. Perturbations (time permitting)~~
 
 ---
 
